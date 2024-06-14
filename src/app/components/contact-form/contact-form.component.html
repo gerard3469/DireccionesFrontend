@@ -1,0 +1,50 @@
+<div class="contact-form">
+    <h1 class="text-center">{{ isEditMode ? 'Edit Contact' : 'New Contact' }}</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label class="fw-bold" for="first_name">First Name</label>
+        <input id="first_name" formControlName="first_name" class="form-control {{ hasError('type') ? 'is-invalid' : '' }}">
+        <div class="invalid-feedback" [ngSwitch]="getCurrentError('type')">
+          <span *ngSwitchCase="'required'">El campo tipo es requerido</span>
+        </div>
+      </div>
+      <div>
+        <label class="fw-bold" for="last_name">Last Name</label>
+        <input id="last_name" formControlName="last_name" class="form-control">
+      </div>
+      
+      <div formArrayName="phones">
+        <label class="fw-bold">Phones</label><br>
+        <div *ngFor="let phone of phones.controls; let i = index">
+          <div class="input-group mb-3">
+            <input [formControlName]="i" placeholder="Phone" class="form-control" aria-describedby="basic-addon1">
+            <button type="button" (click)="removePhone(i)" class="input-group-text" id="basic-addon1">Remove</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="button" (click)="addPhone()">Add Phone</button>
+      </div>
+      <div formArrayName="emails">
+        <label class="fw-bold">Emails</label><br>
+        <div *ngFor="let email of emails.controls; let i = index">
+          <div class="input-group mb-3">
+            <input [formControlName]="i" placeholder="Email" class="form-control" aria-describedby="basic-addon1">
+            <button type="button" (click)="removeEmail(i)" class="input-group-text" id="basic-addon1">Remove</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="button" (click)="addEmail()">Add Email</button>
+      </div>
+      <div formArrayName="addresses">
+        <label class="fw-bold">Addresses</label><br>
+        <div *ngFor="let address of addresses.controls; let i = index">
+          <div class="input-group mb-3">
+            <input [formControlName]="i" placeholder="Address" class="form-control" aria-describedby="basic-addon1">
+            <button class="btn" type="button" (click)="removeAddress(i)" class="input-group-text" id="basic-addon1">Remove</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="button" (click)="addAddress()">Add Address</button>
+      </div>
+      <div class="d-flex justify-content-end ">
+        <button class="btn btn-success" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
