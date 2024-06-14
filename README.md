@@ -1,27 +1,54 @@
-# DireccionesFrontend
+### README para Frontend (Angular)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+#### README.md
 
-## Development server
+# Libreta de Direcciones - Frontend
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este proyecto es el frontend de una aplicación de libreta de direcciones avanzada, construido con Angular.
 
-## Code scaffolding
+## Requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js >= 12.x
+- Angular CLI >= 11.x
 
-## Build
+## Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clona el repositorio:
 
-## Running unit tests
+```bash
+git clone https://github.com/tu-usuario/libreta-direcciones-frontend.git
+cd libreta-direcciones-frontend
+```
+2. Instala las dependencias de Node.js:
+```bash
+npm install
+```
+3. Configura la URL del backend en el archivo de entorno
+```bash
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8000/api'
+};
+```
+4. Inicial el servidor de angular
+```bash
+ng serve
+```
+Tu frontend debería estar corriendo en http://localhost:4200.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Estructura del proyecto
+- src/app/components - Contiene los componentes de Angular.
+- src/app/services - Contiene los servicios para interactuar con la API.
+- src/app/models - Contiene las interfaces y modelos de datos.
 
-## Running end-to-end tests
+## Funcionalidades
+- Página Principal: Muestra una lista de todos los contactos con opciones para ver, editar, eliminar y añadir nuevos contactos.
+- Agregar Contacto: Formulario para ingresar nuevos contactos con campos para nombre, varios números de teléfono, emails y direcciones.
+- Editar Contacto: Formulario similar al de agregar, pero para actualizar datos existentes.
+- Detalles del Contacto: Vista detallada de cada contacto con toda su información asociada
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contribuir
+Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Licencia
+Este proyecto está licenciado bajo la Licencia MIT.
