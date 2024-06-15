@@ -8,8 +8,8 @@ Este proyecto es el frontend de una aplicación de libreta de direcciones avanza
 
 ## Requisitos
 
-- Node.js >= 12.x
-- Angular CLI >= 11.x
+- Node.js >= 20.x
+- Angular CLI >= 18.x
 
 ## Instalación
 
