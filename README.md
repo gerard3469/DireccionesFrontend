@@ -32,7 +32,7 @@ export const environment = {
 ```
 4. Inicial el servidor de angular
 ```bash
-ng serve
+ng serve -c
 ```
 Tu frontend debería estar corriendo en http://localhost:4200.
 
