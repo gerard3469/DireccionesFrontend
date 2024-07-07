@@ -12,7 +12,7 @@ export class ContactService {
   private apiUrl = environment.apiUrl +'/contacts';
 
   constructor(private http: HttpClient) { }
-
+  console.log("asdasdas");
   getContacts(page: number = 1, perPage: number = 10,searchTerm: string = ''): Observable<any> {
     let params = new HttpParams().set('page', page.toString()).set('perPage', perPage.toString());
     if (searchTerm) {
